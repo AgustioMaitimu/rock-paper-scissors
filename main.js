@@ -2,54 +2,57 @@ let choices = ['Rock', 'Paper', 'Scissor'];
 let computerChoice;
 let playerChoice;
 
-function getPlayerChoice() {
-    let playerInput = prompt('What Do You Pick');
-    return playerInput.charAt(0).toUpperCase() + playerInput.substring(1).toLowerCase();
-};
+const buttons = document.querySelector('.buttons');
+buttons.addEventListener('click', (e) => {
+    computerChoice = getComputerChoice()
+    playerChoice = (e.target.innerHTML).slice(0, - 3)
+    console.log(playerChoice)
+    playRound(playerChoice, computerChoice);
+});
 
 function getComputerChoice() {
     let randomChoice = Math.floor(Math.random() * choices.length);
     return choices[randomChoice];
 };
 
-function playRound(playerDecision, computerDecision) {
+function playRound() {
     if (playerChoice == 'Rock') {
         switch (computerChoice) {
             case 'Rock':
-                return 'Draw! You Both Picked Rock'
+                break;
             case 'Paper':
-                return 'You Lost! Paper Beats Rock'
+                break;
             case 'Scissor':
-                return 'You Won! Rock Beats Scissor'
+                break;
         }; 
     } else if (playerChoice == 'Paper') {
         switch (computerChoice) {
             case 'Rock':
-                return 'You Won! Paper Beats Rock'
+                break;
             case 'Paper':
-                return 'Draw! You Both Picked Paper'
+                break;
             case 'Scissor':
-                return 'You Lost! Scissor Beats Paper'
+                break;
         }; 
     } else if (playerChoice == 'Scissor') {
         switch (computerChoice) {
             case 'Rock':
-                return 'You Lost! Rock Beats Scissor'
+                break;
             case 'Paper':
-                return 'You Won! Scissor Beats Paper'
+                break;
             case 'Scissor':
-                return 'Draw! You Both Picked Scissor'
+                break;
         }; 
     }
 };
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playerChoice = getPlayerChoice();
-        computerChoice = getComputerChoice();
-        console.log(`Your Choice: ${playerChoice}\nComputer Choice: ${computerChoice}`)
-        console.log(playRound(playerChoice, computerChoice));
-    };
-};
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         playerChoice = getPlayerChoice();
+//         computerChoice = getComputerChoice();
+//         console.log(`Your Choice: ${playerChoice}\nComputer Choice: ${computerChoice}`)
+//         console.log(playRound(playerChoice, computerChoice));
+//     };
+// };
 
-game()
+// game()
