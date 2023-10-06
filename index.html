@@ -10,20 +10,24 @@
       <div class="player name">
         Player ❤️ ❤️ ❤️ ❤️ ❤️
       </div>
-      <div class="vs"> VS </div>
-      <div class="comp name">
+      <div class="system name">
         ❤️ ❤️ ❤️ ❤️ ❤️ System
       </div>
     </div>
     <div class='middle'>
-      <img class="rps-animation player" src="rps.gif" alt="Rock Paper Scissor Animation">  
-      <p class='choosing-vs-score'>Choosing</p>
-      <img class="rps-animation comp" src="rps.gif" alt="Rock Paper Scissor Animation"> 
+      <img class="rps-animation player" id="player-hand" src="rps.gif" alt="Rock Paper Scissor Animation">  
+      <p class='middle-text'>Choosing</p>
+      <img class="rps-animation sys" id="system-hand" src="rps.gif" alt="Rock Paper Scissor Animation"> 
     </div>
     <div class="buttons">
-      <button class="rock button">Rock 🪨</button>
-      <button class="paper button">Paper 📃</button>
-      <button class="scissor button">Scissor ✂️</button>
+      <div class="main-buttons">
+        <button class="rock button">Rock 🪨</button>
+        <button class="paper button">Paper 📃</button>
+        <button class="scissor button">Scissor ✂️</button>
+      </div>
+      <div class="reset button">
+        Reset
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
